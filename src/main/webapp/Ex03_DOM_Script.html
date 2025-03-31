@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function print(){
+			let ele = document.getElementById("demo");
+			console.log(ele);
+			ele.innerHTML = "아 배고프다" 
+			//div , p : value라는 속성이 없음 > 안쪽에 위치 (innerText, innerHTML)
+		}
+		/*
+		문서가 실행되면 웹 브라우저의 메모리에 DOM tree 형태로 HTML 요소를 올려놓는다!
+		단점 : html 요소를 메모리에 다 올려야 하기 때문에 느려짐
+		장점 : 빠른 접근, 제어 편함
+		
+		반대 : SAX
+		
+				DOM
+				 |
+				html
+			  /	    \
+		head			body
+		
+		*/
+	</script>
+</head>
+<body>
+	<button onclick="print()">클릭하세요</button>
+	<p id="demo">
+		demo 라는 id는 p 태크를 식별할 수 있는 값 
+	</p>
+</body>
+</html>

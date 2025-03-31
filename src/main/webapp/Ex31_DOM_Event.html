@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<style>
+	#myDiv1, #myDiv2 {
+		background-color: coral;
+		padding: 50px;
+	}
+	
+	#myP1, #myP2 {
+		background-color: white;
+		font-size: 20px;
+		border: 1px solid;
+		padding: 20px;
+	}
+	</style>
+</head>
+<body>
+	<h3>addEventListener</h3>
+	
+	<div id="myDiv1">
+		<h2>Bubbling</h2>
+		<p id="myP1">Click me</p>
+	</div>
+	<br>
+	<div id="myDiv2">
+		<h2>Capturing</h2>
+		<p id="myP2">Click me</p>
+	</div>
+	
+	<!-- 
+		capture 를 true로 바꿀수도 있고,
+		default 값은 false
+	 -->
+	
+</body>
+	<script type="text/javascript">
+		document.getElementById("myP1").addEventListener("click", function(){
+			alert("click white element!");
+		},false); // bubbling option값 false
+		//default가 fase라는 것 -> 기본 bubbling이 적용되도록 하겠다.
+		//white만 클릭했는데 white와 orange 다 발생 -> 이벤트의 전파
+		
+		document.getElementById("myDiv1").addEventListener("click", function(){
+			alert("click orange element!");
+		},false); 
+		
+		
+		
+		document.getElementById("myP2").addEventListener("click", function(){
+			alert("click white element!");
+		},true); // capturing option값 true
+		
+		
+		document.getElementById("myDiv2").addEventListener("click", function(){
+			alert("click orange element!");
+		},true); 
+		
+	</script>
+</html>

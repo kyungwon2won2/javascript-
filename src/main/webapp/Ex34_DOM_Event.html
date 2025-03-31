@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<button class="btn">Click me</button>
+</body>
+	<script type="text/javascript">
+	
+		//querySelector (선택자) -> CSS에서 썼던 선택자와 비슷한것.
+		const btn = document.querySelector(".btn");
+		
+		/*
+		btn.onclick = function(){
+			alert("button clicked 1");
+		}
+		
+		btn.onclick = function(){
+			alert("button clicked 2");
+		}
+		*/
+		
+		//같은 이벤트를 onclick으로 여러개 걸면 마지막 이벤트만 생존
+		
+		btn.addEventListener("click", function(){
+			alert("button clicked 1");
+		})
+		
+		btn.addEventListener("click", function(){
+			alert("button clicked 2");
+		})
+	</script>
+</html>

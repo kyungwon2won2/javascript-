@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		table{width: 100%}
+		table,tr,th,td {border: 1px solid; border-collapse: collapse;}
+		th,td{background-color: gold; text-align: center;}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			document.getElementById("create").onclick = function(){
+				let rowInput = document.getElementById("row").value;
+				let colInput = document.getElementById("col").value;
+				//console.log(rowInput); ->ok
+				
+				let createTable = document.createElement("table");
+				createTable.setAttribute("id", "table");
+				
+				//table 생성
+				for(let i=0; i<rowInput; i++){
+					//행 생성 (tr)
+					let createRow = document.createElement("tr"); //tr : 행의 수
+					for(let j=0; j<colInput; j++){
+						/*
+						if(i==0){//첫행은 th
+							//cell 생성
+							let cell = document.createElement("th");
+							let content = document.createTextNode((i+1)+"행, " + (j+1)+"열");
+							
+							//cell 등록
+							cell.appendChild(content);
+							createRow.appendChild(cell);
+						}else{//둘째행 이상은 td
+							//cell 생성
+							let cell = document.createElement("td");
+							let content = document.createTextNode((i+1)+"행, " + (j+1)+"열");
+							
+							//cell 등록
+							cell.appendChild(content);
+							createRow.appendChild(cell);
+						}
+						*/
+						//cell 생성
+						let cell = document.createElement("td");
+						let content = document.createTextNode((i+1)+"행, " + (j+1)+"열");
+						
+						//cell 등록
+						cell.appendChild(content);
+						createRow.appendChild(cell);
+						
+					}
+					//행 등록 (tr)
+					createTable.appendChild(createRow);
+				}
+				
+				//테이블 등록
+				document.getElementById("tableDiv").appendChild(createTable);
+			
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="tableDiv">
+		행의 수 : <input type="text" id="row" name="row" value="2"> <br>
+		열의 수 : <input type="text" id="col" name="col" value="2"> <br>
+		<input type="button" id="create" value="동적테이블 생성">
+		<input type="button" id="remove" value="동적테이블 제거">
+	</div>
+</body>
+
+</html>

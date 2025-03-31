@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let array = ["포도", "사과"];
+		console.log(array.toString()); 
+		//toString()이 재정의 되어있음 -> 출력 결과 얻을 수 있음
+		console.log(array + "default toString() 생략");
+		
+		for(let i=0; i<array.length; i++){
+			console.log(array[i]);
+		}
+		
+		for(let index in array){
+			console.log(array[index]);
+		}
+		
+		for(let value of array){
+			console.log(value);
+		}
+		
+		//javascript는 동적 배열 -> ["포도", "사과"] > [0][1]
+		array[2] = "바나나"; //가능
+		console.log(array.toString() + " / " + array.length);
+		
+		//["포도", "사과", "바나나"]
+		//권장하지는 않지만 가능한거......
+		array[10] = "애플망고";
+		console.log(array.toString() + " / " + array.length);
+		
+		console.log(array[9] + ">> array[9]");
+		array[9] = "배";
+		console.log(array[9] + ">> array[9]");
+		
+		//이렇게하면 너무 혼란스러움을 불러일으킴...
+		
+		let array2 = ["one", "two", "three"];
+		console.log(array2 + "---" + array2.length);
+		array2.length = 2; //줄이는거 가능(권장하지 않음)
+		console.log(array2 + "---" + array2.length);
+		array2.length = 10; //늘이는거 가능(권장하지 않음)
+		console.log(array2 + "---" + array2.length);
+		
+		//좋은 방안  ------>
+		//let arr = [] ,  arr.push() ,  arr.pop();
+		let array3 = [];
+		array3.push("aa");
+		array3.push("bb");
+		
+		console.log(array3.pop());
+		
+	</script>
+</body>
+</html>

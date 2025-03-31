@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo"></p>
+	
+	<script type="text/javascript">
+		const cars =["BMS", "Volvo", "Mini"];
+		
+		//개션된 for(index)
+			for(let index in cars){ //Araay index return
+				console.log(index + " / " + cars[index]);
+			}
+		
+		//of
+		let text="";
+		for(let value of cars){ //value 값 return
+			text += value + "<br>";
+		}
+		
+		document.getElementById("demo").innerHTML = text;
+	
+	</script> 
+</body>
+</html>

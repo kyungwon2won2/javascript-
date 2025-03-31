@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<ul id="myList"><li>coffee</li><li>tea</li><li>milk</li></ul>
+	<button onclick="myFunc()">클릭</button>
+	<button onclick="myFunc2()">클릭2</button>
+</body>
+	<script type="text/javascript">
+		
+		function myFunc(){
+			let list = document.getElementById("myList");
+			console.log(list);
+		
+			list.removeChild(list.childNodes[0]);
+			//<ul> 태그 밑에 <li> 배열
+			//[li][li][li]
+			//select > options랑 같은 느낌
+			//앞을 지우면 치고올라간다
+		}
+		
+		function myFunc2(){
+			let textNode = document.createTextNode("water");
+			let item = document.getElementById("myList").childNodes[0];
+			console.log(item); // -> <li>coffee</li>
+			console.log(item.childNodes[0]); // -> coffee
+			
+			//coffee -> water 로 replace
+			item.replaceChild(textNode, item.childNodes[0]);	
+		}
+	</script>
+</html>
